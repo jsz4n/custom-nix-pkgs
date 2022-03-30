@@ -8,7 +8,7 @@ let
 
     callPackage = path: overrides:
         let f = import path;
-        in f ((builtins.intersectAttrs (builtins.functionArgs f) allPkgs) // { maintainers = maintainers; } // overrides);
+        in f ((builtins.intersectAttrs (builtins.functionArgs f) allPkgs)  // overrides);
 
     pkgs = with nixpkgs; {
         kdrive-desktop = callPackage ./pkgs/kdrive-desktop {};
